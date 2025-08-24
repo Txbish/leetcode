@@ -5,12 +5,9 @@
  * @return {number}
  */
 var reduce = function(nums, fn, init) {
-    if (nums.length===0)
-        return init
-    let val=fn(init,nums[0])
-    for(let i=1;i<nums.length;i++)
-    {
-        val=fn(val,nums[i])
+    let val = init;   // start with init
+    for (let i = 0; i < nums.length; i++) {
+        val = fn(val, nums[i]); // accumulate
     }
-    return val
+    return val;
 };
